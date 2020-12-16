@@ -1,18 +1,28 @@
 #!/usr/bin/env python3
 
+# i3/config: bindsym Mod1+m exec xfce4-screenshooter -r -o ~/projects/TheWizardOfEvergreenTerrace/screenshat/screenshat.py
 
 import gi
 import sys
 import pathlib
 import shutil
 
+from PIL.PngImagePlugin import PngImageFile, PngInfo
+
 img_path = sys.argv[1]
 config_path = "/home/kali/.config/screenshat/conf"
+
+# config checks
+if not pathlib.Path(config_path).is_file():
+    pathlib.Path(config_path[:-4]).mkdir(parents=True, exist_ok=True)
+    pathlib.Path(config_path).write_text("")
+
 last_path = pathlib.Path(config_path).read_text()
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, GLib
 
+# Gui window
 class EntryWindow(Gtk.Window):
     def __init__(self):
         Gtk.Window.__init__(self, title="Screenshat")
@@ -27,6 +37,10 @@ class EntryWindow(Gtk.Window):
         self.entry.set_text(last_path)
         vbox.pack_start(self.entry, True, True, 0)
 
+        self.entryy = Gtk.Entry()
+        self.entryy.set_text("")
+        vbox.pack_start(self.entryy, True, True, 0)
+
         hbox = Gtk.Box(spacing=6)
         vbox.pack_start(hbox, True, True, 0)
 
@@ -37,6 +51,14 @@ class EntryWindow(Gtk.Window):
     def on_save_clicked(self, button):
         current_path = self.entry.get_text()
 
+        # write metadata
+        metadata = PngInfo()
+        metadata.add_text("screenshat", self.entryy.get_text())
+
+        img = PngImageFile(img_path)
+        img.save(img_path, pnginfo=metadata)
+        
+
         # Update config file
         pathlib.Path(config_path).write_text(current_path)
         
@@ -45,6 +67,8 @@ class EntryWindow(Gtk.Window):
 
         # move file 
         shutil.move(img_path, current_path)
+
+        self.destroy()
 
 
 win = EntryWindow()
