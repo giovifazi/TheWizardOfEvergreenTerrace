@@ -1,0 +1,24 @@
+
+\begin{tikzpicture}[remember picture,overlay]
+   %%%%%%%%%%%%%%%%%%%% Table of contents %%%%%%%%%%%%%%%%%%%%%%%%
+
+   %% Background %%
+   \fill[awesome-darknight!94] (current page.south west) rectangle (current page.north east);
+   \fill[awesome-red] (current page.south west) rectangle (20,0.3);
+   \fill[white] (current page.south west) rectangle (20,0);
+
+   % triangoli
+   \node[rotate=90,fill=awesome-darknight!6,regular polygon, regular polygon sides=3, minimum size=5cm] at (4,-8);
+   \node[rotate=90,fill=awesome-darknight!6,regular polygon, regular polygon sides=3, minimum size=5cm] at (8,-10.4);
+   \node[rotate=270,fill=awesome-darknight!8,regular polygon, regular polygon sides=3, minimum size=5cm] at (10.8,-10.4);
+   \node[rotate=90,fill=awesome-darknight!7,regular polygon, regular polygon sides=3, minimum size=5cm] at (12,-8);
+   \node[rotate=270,fill=awesome-darknight!6,regular polygon, regular polygon sides=3, minimum size=5cm] at (14.8,-8);
+   \node[rotate=90,fill=awesome-darknight!8,regular polygon, regular polygon sides=3, minimum size=5cm] at (16,-10.4);
+   \node[rotate=270,fill=awesome-darknight!6,regular polygon, regular polygon sides=3, minimum size=5cm] at (18.8,-10.4);
+\end{tikzpicture}
+
+% personalizzazioni table of contents
+\renewcommand\contentsname{Indice \faBook}
+\begin{cvletter}
+   \tableofcontents
+\end{cvletter}

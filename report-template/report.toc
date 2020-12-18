@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}\textsc {\color {awesome-red}VAPT\color {darktext}: dettagli tecnici}\ {\FA \symbol {"F188}}\color {gray}\unhbox \voidb@x \leaders \hrule height0.9pt\hfill \kern \z@ }{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Ricognizione}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Shell www-data}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Privilege Escalation}{3}{subsection.1.3}%

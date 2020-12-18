@@ -1,0 +1,44 @@
+
+\begin{tikzpicture}[remember picture,overlay]
+   %%%%%%%%%%%%%%%%%%%% Background %%%%%%%%%%%%%%%%%%%%%%%%
+   \fill[awesome-darknight!94] (current page.south west) rectangle (current page.north east);
+
+   %%%%%%%%%%%%%%%%%%%% Background Polygon %%%%%%%%%%%%%%%%%%%%
+   % cerchio logo
+   \node[] at (2.33,-1.65) {\includegraphics[width=114] {img/bashed.png}};
+
+   \draw[white, ultra thick, rotate=10] (0,-2) arc (180:360:2cm);
+   \draw[awesome-red, ultra thick, rotate=10] (4,-2) arc (0:180:2cm);
+
+   % testo in alto a destra
+   %\node at (12,-1.2) {\bf \color{awesome-red}\LARGE \faTerminal\ Rep\color{white}ort };
+   \node at (12.08,-1.2) {\bf \color{awesome-red}\LARGE \faEdit\ Write\color{white}up };
+   \node at (12.63,-2.1) {\color{white}\normalsize Vulnerability Assestment};
+   \node at (11.95,-2.7) {\color{white}\normalsize Penetration Test};
+   % separe'
+   \draw[awesome-red,ultra thick] (15,-3) -- (15,-0.8);
+   \draw[white,ultra thick] (15,-3) -- (15,-1.5);
+   % altro testo
+   \node at (16.5,-1.2) {\color{awesome-red}\LARGE 31\color{white}~~·~~12 };
+   \node at (17.5,-2.3) {\bf\color{white}\fontsize{50}{90}\selectfont2020};
+
+
+   % triangoli
+   \node[rotate=90,fill=awesome-darknight!96,regular polygon, regular polygon sides=3, minimum size=5cm] at (4,-8);
+   \node[rotate=90,fill=awesome-darknight!96,regular polygon, regular polygon sides=3, minimum size=5cm] at (8,-10.4);
+   \node[rotate=270,fill=awesome-darknight!98,regular polygon, regular polygon sides=3, minimum size=5cm] at (10.8,-10.4);
+   \node[rotate=90,fill=awesome-darknight!97,regular polygon, regular polygon sides=3, minimum size=5cm] at (12,-8);
+   \node[rotate=270,fill=awesome-darknight!96,regular polygon, regular polygon sides=3, minimum size=5cm] at (14.8,-8);
+   \node[rotate=90,fill=awesome-darknight!98,regular polygon, regular polygon sides=3, minimum size=5cm] at (16,-10.4);
+   \node[rotate=270,fill=awesome-darknight!96,regular polygon, regular polygon sides=3, minimum size=5cm] at (18.8,-10.4);
+
+   % testo al centro
+   \node at (7.5,-12.7) {\bf\fontsize{80}{90}\selectfont{\color{awesome-darknight}/\color{awesome-red}Hack\color{white}the\color{awesome-red}Box\color{awesome-darknight}/}};
+   \node at (5.5,-14.8) {\bf\fontsize{55}{90}\selectfont{\color{awesome-darknight}\textsc{\color{white}Bashed}}};
+
+
+   % testo tamarro sfocato sotto
+   \node[opacity=0.2] at (10,-21) {\bf\color{white}\fontsize{300}{90}\selectfont{H\color{awesome-red}T\color{white}B}};
+\end{tikzpicture}
+
+
