@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PYG{k+kn}{from} \PYG{n+nn}{os} \PYG{k+kn}{import} \PYG{n}{dunno}
+      \PYG{n}{this}\PYG{o}{.}\PYG{n}{foo}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}fighters\PYGZdq{}}\PYG{p}{)}
+
+      \PYG{k}{while} \PYG{n}{a} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{99}\PYG{p}{:}
+         \PYG{n}{a} \PYG{o}{+=} \PYG{l+m+mi}{20}
+
+      \PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}file.txt\PYGZdq{}}\PYG{p}{)} \PYG{k}{as} \PYG{n}{f}\PYG{p}{:}
+         \PYG{n}{readline}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}
+         \PYG{n}{echo} \PYG{l+s+s1}{\PYGZsq{}something\PYGZsq{}}
+   
+\end{Verbatim}

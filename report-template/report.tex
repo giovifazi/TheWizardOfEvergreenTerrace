@@ -23,6 +23,11 @@
 \usetikzlibrary{calc}
 \usetikzlibrary{shapes.geometric}
 
+% for code listings and highlight
+\usepackage{minted}
+\usepackage{tcolorbox}
+\tcbuselibrary{minted}
+
 % For pie charts
 \usepackage{pgf-pie}
 
@@ -41,13 +46,18 @@
 \colorlet{awesome}{awesome-red}
 % Uncomment if you would like to specify your own color
 % \definecolor{awesome}{HTML}{CA63A8}
+\definecolor{awesome-yellow}{HTML}{F2BA49}
 
 % Colors for text
 % Uncomment if you would like to specify your own color
-% \definecolor{darktext}{HTML}{414141}
-% \definecolor{text}{HTML}{333333}
-% \definecolor{graytext}{HTML}{5D5D5D}
-% \definecolor{lighttext}{HTML}{999999}
+\definecolor{listbackg}{HTML}{F8F8F8}
+\definecolor{listbordr}{HTML}{E8EAED}
+
+%\definecolor{darktext}{HTML}{414141}
+\definecolor{darktext}{HTML}{333333}
+\definecolor{text}{HTML}{333333}
+\definecolor{graytext}{HTML}{5D5D5D}
+\definecolor{lighttext}{HTML}{999999}
 
 % Set false if you don't want to highlight section with awesome color
 \setbool{acvSectionColorHighlight}{true}
@@ -55,6 +65,11 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+% Inline tcolorbox listing \inlinetcb{text}
+\newtcbox{\inlinetcb}[1][red]{on line,
+arc=3pt,colback=listback,colframe=listbordr,
+before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+boxsep=0pt,left=2pt,right=2pt,top=1pt,bottom=.5pt}
 
 %-------------------------------------------------------------------------------
 \begin{document}
@@ -62,26 +77,26 @@
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
-{Hackthebox Writeup}
+{JamalSec srl\\
+Via Lemani Darculo 29, Pesaro}
 {}
-{  \href{https://github.com/giovifazi}{\faGithub\ giovifazi}\\
-   \href{https://app.hackthebox.eu/profile/55980}{HTB:\ christouch}
-}
+{Documento confidenziale per:\\
+Gioielleria Di Pasquale snc}
 
 \input{sections/cover.tex}
 \newpage
 \input{sections/toc.tex}
 \newpage
-\input{sections/testResults.tex}
+
 
 % REPORT CHAPTERS
-%\newpage
-%\input{sections/legal.tex}
-%\newpage
-%\input{sections/contacts.tex}
-%\newpage
-%\input{sections/executiveSummary.tex}
-%\newpage
-%\input{sections/testResults.tex}
+\newpage
+\input{sections/legal.tex}
+\newpage
+\input{sections/contacts.tex}
+\newpage
+\input{sections/executiveSummary.tex}
+\newpage
+\input{sections/testResults.tex}
 
 \end{document}

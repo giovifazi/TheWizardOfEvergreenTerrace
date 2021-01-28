@@ -1,0 +1,99 @@
+\begin{cvletter}
+\color{text}
+   \subsection{\textsc{Sistema Linux (IP: 192.168.0.0)}}
+
+   \subsubsection{Enumerazione Servizi}
+
+
+   {{\fontsize{12pt}{1em}\bodyfont\bfseries\textcolor{text}{Nmap Scan Results}}}\\
+   \inlinetcb{nmap -sV -sC 10.10.10.10}
+
+   \begin{figure}[H]
+      \centering
+      \includegraphics[width=1.0\textwidth]{}\\
+   \end{figure}
+
+   \begin{center}
+      \begin{tabular}{ | l | l | }
+       \hline
+       \textbf{open TCP ports} & \textbf{open UDP Ports}\\ 
+       \hline
+       21,22,23 & 100,101\\ 
+       \hline
+      \end{tabular}
+   \end{center}
+
+   Come mostrato dall'immagine sopra, il sistema target ha un webserver sulla porta 80 che\dots
+
+   %{{\fontsize{12pt}{1em}\bodyfont\bfseries\textcolor{text}{Droopescan Scan Results}}}\\
+   %{{\fontsize{12pt}{1em}\bodyfont\bfseries\textcolor{text}{Dirb Scan Results}}}\\
+
+   \subsubsection{Vulnerability Explanation}
+   \inlinetcb{Ability Server 2.34} e' vulnerabile ad un buffer overflow che causa esecuzione arbitraria di codice\dots
+
+   {{\fontsize{12pt}{1em}\bodyfont\bfseries\textcolor{text}{Severita': \color{awesome-red}{Critica}}}\\
+
+   \subsubsection{Fix Vulnerabilita}
+   E' possibile installare una patch per questa vulnerabilita' al seguente \href{http://www.code-crafters.com/abilityserver/}{\underline{Link}}
+
+   \subsubsection{Proof of Concept Code}
+   Il sorgente dell'exploit e' reperibile con \inlinetcb{searchsploit -m 10204.py}. Ogni modifica al codice viene 
+   evidenziata in rosso. Si ricorda di cambiare opportunamente, dove necessario, gli indirizzi ip e porta rispetto a 
+   quelli della propria macchina locale in uso. Preparare, se necessario, un listener netcat con: \inlinetcb{nc -lnvp <PORT>}.
+
+   \begin{tcblisting}{
+         %on line,
+         %hbox,
+         listing only,
+         colback=listback,
+         colframe=listbordr,
+         overlay={
+            \begin{tcbclipinterior}
+               \fill[listbordr] (frame.south west) rectangle ([xshift=4mm]frame.north west);
+            \end{tcbclipinterior}},
+         breakable,
+         enhanced,
+         minted language=python,
+         minted options={
+            numbersep=2mm,
+            linenos,
+            highlightlines={2,4,8-9},
+            highlightcolor=awesome-red!30
+         }
+      }
+      from os import dunno
+      this.foo("fighters")
+
+      while a < 99:
+         a += 20
+
+      with open("file.txt") as f:
+         readline(f)
+         echo 'something'
+   \end{tcblisting}
+
+
+   Dopo aver eseguito l'exploit si dovrebbe ricevere una reverse shell come utente www-data
+
+   \subsubsection{Shell Screenshot}
+
+   \begin{figure}[H]
+      \centering
+      \includegraphics[width=1.0\textwidth]{}\\
+   \end{figure}
+
+   \subsubsection{Elevazione Privilegi}
+   C'e' un cronjob lanciato come root\dots
+
+   \subsubsection{Descrizione Vulnerabilita'}
+
+   {{\fontsize{12pt}{1em}\bodyfont\bfseries\textcolor{text}{Severita': \color{awesome-red}{Critica}}}\\
+
+
+
+   \begin{figure}[H]
+      \centering
+      \includegraphics[width=1.0\textwidth]{}\\
+   \end{figure}
+
+\end{cvletter}
