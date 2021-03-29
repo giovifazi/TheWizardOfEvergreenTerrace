@@ -6,6 +6,7 @@
       %                 awesome-nephritis, awesome-concrete, awesome-darknight
 
       \section{\textsc{\color{awesome-red}Ris\color{darktext}ultati}\ \faPieChart \color{gray}\vhrulefill{0.9pt}}}
+      \color{text}
 
       Le vulnerabilità emerse dall'analisi sono classificate con lo standard CVSS v3.1:\\
 
@@ -18,40 +19,39 @@
          \Huge{\textbf{6}}	     & \large{\textsc{\textbf{\color{black}{Critico}}}} & 9.0--10.0\\
          \hline
          \color{awesome-red}
-         \Huge{\textbf{4}}	     & \large{\textsc{\textbf{\color{darktext}{Alto}}}}& 7.0--8.9\\
+         \Huge{\textbf{4}}	     & \large{\textsc{\textbf{\color{text}{Alto}}}}& 7.0--8.9\\
          \hline
          \color{awesome-orange}
-         \Huge{\textbf{2}}	     & \large{\textsc{\textbf{\color{lightgray}{Medio}}}} & 4.0--6.9\\
+         \Huge{\textbf{2}}	     & \large{\textsc{\textbf{\color{text}{Medio}}}} & 4.0--6.9\\
          \hline
-         \color{awesome-emerald}
-         \Huge{\textbf{13}}	     & \large{\textsc{\color{lightgray}{Basso}}} & 0.1--3.9\\
+         \color{awesome-yellow}
+         \Huge{\textbf{13}}	     & \large{\textsc{\color{gray}{Basso}}} & 0.1--3.9\\
          \hline
          \color{awesome-skyblue}
-         \Huge{123}	     & \normalsize{\textsc{Info}} & 0.0\\
+         \Huge{123}	     & \normalsize{\textsc{\color{lightgray}{Info}}} & 0.0\\
       \end{tabular}
 
       %% TORTA
       \begin{tikzpicture}
-         \pie[hide number,explode=0.1,text=inside, scale font, radius=2.5, color={black!90,awesome-red!90,awesome-orange!90,awesome-emerald!90}]{24/\color{white}Critico, 16/\color{white}Alto, 8/\color{white}Medio, 52/\color{white}Basso}
+         \pie[hide number,explode=0.1,text=inside, scale font, radius=2.5, color={black,awesome-red,awesome-orange,awesome-yellow}]{24/\color{white}Critico, 16/\color{white}Alto, 8/\color{white}Medio, 52/\color{white}Basso}
       \end{tikzpicture}
 
       \footnotesize
       \subsection{Legenda}
-      \textsc{\color{black}{\textbf{Critico}}}: Vulnerabilità facilmente sfruttabili la cui compromissione permette di avere accesso completo
-      al sistema. Si consiglia di prendere provvedimenti immediati.\\
+      \textsc{\color{black}{\textbf{Critico}}}: Vulnerabilità facilmente sfruttabili che permettono di ottenere accesso completo
+      ai sistemi. Si consiglia di prendere provvedimenti immediati.\\
 
-      \textsc{\color{awesome-red}{\textbf{Alto}}}: Vulnerabilità il cui sfruttamento è più difficile ma possono comunque causare
+      \textsc{\color{awesome-red}{\textbf{Alto}}}: Vulnerabilità il cui sfruttamento è più difficile ma causano
       perdita di dati o elevazione di privilegi dell'attaccante. Si consiglia di prendere provvedimenti il prima possibile.\\
 
       \textsc{\color{awesome-orange}{\textbf{Medio}}}: Vulnerabilità che vengono rilevate ma il cui sfruttamento richiede particolari
-      condizioni (ad esempio social engineering). La risoluzione di tali problemi andrebbe pianificata dopo quella delle categorie
-      ad alto rischio.\\
+      condizioni (come social engineering). Tali problemi vanno risolti dopo le categorie di maggior rischio.\\
 
-      \textsc{\color{awesome-emerald}{\textbf{Basso}}}: Vulnerabilità non sfruttabili o non particolarmente dannose, la loro
-      risoluzione riduce la superficie d'attacco. Si consiglia di prendere provvedimenti nel prossimo ciclo di sviluppo.\\
+      \textsc{\color{awesome-yellow}{\textbf{Basso}}}: Vulnerabilità poco dannose, tuttavia la loro
+      risoluzione riduce la superficie d'attacco. Prendere provvedimenti nel prossimo ciclo di sviluppo.\\
 
       \textsc{\color{awesome-skyblue}{\textbf{Info}}}: Categoria che racchiude informazioni aggiuntive raccolte durante i test
-      oppure documentazione.\\
+      o documentazione.\\
       \sectionsep
 
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,15 +64,12 @@
    \hfill
    \begin{minipage}[t]{0.60\textwidth} 
 
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      %     EXPERIENCE
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
       \section{\color{awesome-red}Sin\color{darktext}tesi (\textsc{Executive Summary})\ \color{gray}\vhrulefill{0.9pt}}
+      \color{text}
       JamalSec ha eseguito test per la \textbf{valutazione della sicurezza del sito web della Gioielleria Vairo di Pasquale} a
       partire dalla data 1 Dic. 2020 fino al 31 Dic. 2020.\\
       Tramite una serie di attacchi \textbf{sono state trovate molte vulnerabilità critiche} che hanno permesso \textbf{l'accesso
-      completo al server remoto}.\\
+      completo al server remoto con conseguente furto di dati e possibili danni economici}.\\
       Si consiglia di risolvere al più presto tali vulnerabilità in quanto facilmente individuabili da potenziali
       malintenzionati.
 

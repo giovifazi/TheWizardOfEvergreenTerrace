@@ -1,0 +1,10 @@
+      from os import dunno
+      this.foo("fighters")
+
+      while a < 99:
+         a += 20
+
+      with open("file.txt") as f:
+         readline(f)
+         echo 'something'
+   
