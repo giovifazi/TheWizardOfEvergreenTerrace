@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 
+# remember to change config_path to a valid path
+
+# Usage: python screenshat.py /path/to/screenshot
+
+# if it says PIL module not found, do pip install image
+
+# for xfce4-screenshoter (mostly kali linux)
 # i3/config: bindsym Mod1+m exec xfce4-screenshooter -r -o ~/projects/TheWizardOfEvergreenTerrace/screenshat/screenshat.py
+
+# for flameshot
+# .xinitrc: exec dbus-launch i3
+# i3/config: bindsym Mod1+m exec SSHOTPATH=/tmp/$(date "+%F-%H-%M-%N").png && flameshot gui -r > "$SSHOTPATH" && python /home/giovi/Projects/TheWizardOfEvergreenTerrace/screenshat/screenshat.py "$SSHOTPATH"
 
 import gi
 import sys
@@ -9,8 +20,15 @@ import shutil
 
 from PIL.PngImagePlugin import PngImageFile, PngInfo
 
+if (len(sys.argv) != 2):
+    sys.exit()
+
 img_path = sys.argv[1]
-config_path = "/home/kali/.config/screenshat/conf"
+
+if not pathlib.Path(img_path).is_file():
+    sys.exit()
+
+config_path = "/home/giovi/.config/screenshat/conf"
 
 # config checks
 if not pathlib.Path(config_path).is_file():
